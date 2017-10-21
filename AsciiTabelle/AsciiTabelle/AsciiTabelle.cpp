@@ -15,32 +15,6 @@ Description: "Aufgabe: Verwendung von Schleifen: ASCII-Tabelle"
 #include <iomanip>
 #include <locale>
 
-/*  description:    Funktion, die einen Dezimalwert in einen Oktalwert konvertiert.
-parameters:     n: Eine Dezimalzahl.
-return value:   Das Ergebnis im Oktalsystem.
-*/
-long decimalToOctal(long n)
-{
-	long octal = 0, i = 1;
-
-	// Solange wie n ungleich 0 ist...
-	while (n != 0)
-	{
-		// der Rest von der Division von n durch 8 wird zwischengespeichert
-		const int remainder = n % 8;
-
-		// n wird auf das Ergebnis der ganzzahligen Division durch 8 gesetzt
-		n = n / 8;
-
-		// zur Ergebnisvariable octal wird der Rest, multipliziert mit i, addiert. 
-		octal = octal + remainder * i;
-
-		// i wird bei jedem Schleifendurchlauf mit 10 multipliziert und gibt somit die Stelle vor, an der die Ziffer stehen soll.
-		i = i * 10;
-	}
-	return octal;
-}
-
 
 /*  description:    Funktion, die die Grundstruktur der Tabelle erstellt, die im Lehrbrief erwartet wird.
 parameters:     na
@@ -119,7 +93,7 @@ void asciiTabelle()
 				// std::setw(3) - gibt an, wieviele Stellen der auszugebende String insgesamt haben soll, und beeinflusst damit die Methode std::setfill().
 				// std::uppercase - sorgt dafür, dass der auszugebende String nur Grossbuchstaben enthaelt.
 				// std::hex - wandelt die gegebene Dezimalzahl in eine Hexadezimalzahl um.
-				std::cout << std::setfill('0') << std::setw(3) << decimalToOctal(dez1) << " " << std::setfill('0') << std::setw(3)
+				std::cout << std::setfill('0') << std::setw(3) << std::oct<<(dez1)<< std::dec << " " << std::setfill('0') << std::setw(3)
 					<< dez1 << " " << std::setfill('0') << std::setw(3) << std::uppercase << std::hex << dez1 << " " << " " <<
 					character1 << "    ";
 			}
