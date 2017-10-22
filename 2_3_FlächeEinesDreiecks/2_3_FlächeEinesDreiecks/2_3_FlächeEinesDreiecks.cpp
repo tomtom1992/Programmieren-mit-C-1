@@ -19,9 +19,9 @@ Description: "Aufgabe: Fläche eines Dreiecks berechnen"
 int main()
 {
 	// Seitenlängen a,b,c von der Konsole einlesen
-	float a = 0;
-	float b = 0;
-	float c = 0;
+	double a = 0;
+	double b = 0;
+	double c = 0;
 
 	std::cout << "Bitte Wert fuer a eingeben:" << std::endl;
 	std::cin >> a;
@@ -41,9 +41,9 @@ int main()
 
 	// Berechnung nach Formel 2.1
 	// Vor Berechnung prüfen, ob Ausdruck unter der Wurzel 0 ist.
-	const float s = 1.0 / 2.0 * (a + b + c);
-	const float wert_unter_wurzel1 = s * (s - a)*(s - b)*(s - c);
-	float ergebnis1 = 0;
+	const double s = 1.0 / 2.0 * (a + b + c);
+	const double wert_unter_wurzel1 = s * (s - a)*(s - b)*(s - c);
+	double ergebnis1 = 0;
 	if (wert_unter_wurzel1 != 0)
 	{
 		ergebnis1 = sqrt(wert_unter_wurzel1);
@@ -51,8 +51,8 @@ int main()
 
 	// Berechnung nach Formel 2.2
 	// Vor Berechnung prüfen, ob Ausdruck unter der Wurzel 0 ist.
-	const float wert_unter_wurzel2 = (a + b + c)*(a + b - c)*(b + c - a)*(c + a - b);
-	float ergebnis2 = 0;
+	const double wert_unter_wurzel2 = (a + b + c)*(a + b - c)*(b + c - a)*(c + a - b);
+	double ergebnis2 = 0;
 	if (wert_unter_wurzel2 != 0)
 	{
 		ergebnis2 = 1.0 / 4.0 * sqrt(wert_unter_wurzel2);

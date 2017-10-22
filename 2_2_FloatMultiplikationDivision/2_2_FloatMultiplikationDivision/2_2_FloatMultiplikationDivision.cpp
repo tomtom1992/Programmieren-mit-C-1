@@ -6,16 +6,13 @@ Author: Thomas Hahn
 
 Date: 14.10.2017
 
-Description: "Aufgabe: Rundungsfehler durch fortegesetzte Multiplikation/Division"
+Description: "Aufgabe: Rundungsfehler durch fortgesetzte Multiplikation/Division"
 
 ==========================================================*/
 
 #include "stdafx.h"
 #include <iostream>
 #include <iomanip>
-//#include <iomanip>
-//#include <locale>
-
 
 
 /*  description:    Funktion, die 10^6 10 mal mit einem Faktor k multipliziert und wieder dividiert , die im Lehrbrief erwartet wird.
@@ -25,12 +22,13 @@ return value:   void
 void grundStruktur()
 {
 	float x = 1E6;
-	float k = 0.1693f;
+	const float k = 0.1693f;
 
 	std::cout << std::fixed;
+	std::cout.precision(8);
 
 	//Anfangswert
-	std::cout << "Anfangswert: " << std::setprecision(8) << x << std::endl;
+	std::cout << "Anfangswert: "  << x << std::endl;
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -38,7 +36,7 @@ void grundStruktur()
 	}
 
 	//Ergebnis nach Multiplikation
-	std::cout << "Ergebnis nach 10 facher Multiplikation: " << std::setprecision(8) << x << std::endl;
+	std::cout << "Ergebnis nach 10 facher Multiplikation: "  << x << std::endl;
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -46,7 +44,7 @@ void grundStruktur()
 	}
 
 	//Ergebnis nach Division
-	std::cout << "Ergebnis nach 10 facher Division: " << std::setprecision(8) << x << std::endl;
+	std::cout << "Ergebnis nach 10 facher Division: "  << x << std::endl;
 	bool vorherNachherGleich = x == 1E6;
 
 	if (vorherNachherGleich)
