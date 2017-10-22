@@ -17,11 +17,65 @@ Description: "Aufgabe: Feld mit Zufallszahlen belegen - Kennwerte ermitteln"
 using namespace std;
 
 
-/*  description:    Hauptmethode des C++ Programms.
-	parameters:		na
-	return value:	void
+/*  description:    Gibt den größten Wert aus einem double Feld zurück.
+	parameters:		Ein double Feld.
+	return value:	Der größte Wert als double.
 */
 
+double maximum(double a[100])
+{
+	double max = a[0];
+	for (int i = 0; i < 100; ++i)
+	{
+		if (a[i] > max)
+		{
+			max = a[i];
+		}
+	}
+
+	return max;
+}
+
+
+/*  description:    Gibt den kleinsten Wert aus einem double Feld zurück.
+parameters:		Ein double Feld.
+return value:	Der kleinste Wert als double.
+*/
+double minimum(double a[100])
+{
+	double min = a[0];
+	for (int i = 0; i < 100; ++i)
+	{
+		if (a[i] < min)
+		{
+			min = a[i];
+		}
+	}
+
+	return min;
+}
+
+/*  description:    Gibt den arithmetischen Mittelwert aus einem double Feld zurück.
+parameters:		Ein double Feld.
+return value:	Der arithemetische Mittelwert als double.
+*/
+double mean(double a[100])
+{
+	double am = 0;
+	for (int i = 0; i < 100; ++i)
+	{
+		am += a[i];
+	}
+
+	am = am / 100.00;
+
+	return am;
+}
+
+/*  description:    Hauptmethode des C++ Programms.
+parameters:			na
+return value:		Wenn das Programm ohne Fehler durchläuft, wird 0 zurückgegeben.
+*/
 int main()
 {
 	double a[100];
@@ -43,38 +97,18 @@ int main()
 	cout << endl << endl;
 
 	// Arithmetisches Mittel
-	double am = 0;
-	for (int i = 0; i < 100; ++i)
-	{
-		am += a[i];
-	}
-
-	am = am / 100.00;
+	const double am = mean(a);
 
 	cout << "Arithmetisches Mittel:\t" << am << endl;
 
 	// Minimum
-	double min = a[0];
-	for (int i = 0; i < 100; ++i)
-	{
-		if (a[i] < min)
-		{
-			min = a[i];
-		}
-	}
+	const double min = minimum(a);
 
 	cout << "Minimum:\t\t" << min << endl;
 
 
 	// Maxmimum
-	double max = a[0];
-	for (int i = 0; i < 100; ++i)
-	{
-		if (a[i] > max)
-		{
-			max = a[i];
-		}
-	}
+	const double max = maximum(a);
 
 	cout << "Maximum:\t\t" << max << endl;
 
