@@ -109,11 +109,14 @@ int main()
 	string inhalt = datei_einlesen("C:\\Projects\\Programmieren-mit-C-1\\3_2_KennwerteEinerZahlenreiheAusEinerDatei\\Debug\\daten-3-2.txt");
 
 	int i = 0;
-	while (inhalt != "")
+	while (inhalt != "" && i<100)
 	{
 		int index = inhalt.find('\n');
 
 		string aktuelle_zeile = inhalt.substr(0, index);
+
+		//aktuelle_zeile.erase(0, aktuelle_zeile.find_first_not_of(" ")); //führende Leerzeichen entfernen
+		//aktuelle_zeile.erase(aktuelle_zeile.find_last_not_of(" ") + 1);  //Leerzeichen am Ende entfernen
 
 		a[i++] = stod(aktuelle_zeile);
 

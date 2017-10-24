@@ -1,12 +1,12 @@
 /*=========================================================
 
-Filename: 3_3_ErzeugungVonPseudozufallszahlen.cpp
+Filename: 3_4_PeriodenlaengeVonPseudozufallszahlen.cpp
 
 Author: Thomas Hahn
 
 Date: 24.10.2017
 
-Description: "Aufgabe: Erzeugung von Pseudozufallszahlen"
+Description: "Aufgabe: Periodenlänge von Pseudozufallszahlen"
 
 ==========================================================*/
 
@@ -31,13 +31,19 @@ int main()
 	std::cout << "10 Zufallszahlen:" << std::endl;
 
 	double zufallswert = 0;
-	for (int i = 0; i < 10;++i)
+	int durchlaufe = 0;
+	while (durchlaufe == 0 || durchlaufe > 0 && zufallswert != 0)
 	{
-		zufallswert = fmod((a * zufallswert + b) , m);
-
-		std::cout << std::setw(6)<<zufallswert << std::endl;
+		zufallswert = fmod((a * zufallswert + b), m);
+		durchlaufe++;
+		//std::cout << std::setw(6) << zufallswert << std::endl;
 	}
 
-    return 0;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl;
+	std::cout << "m = " << m << std::endl << std::endl;
+	std::cout << "Die Periodenlaenge betraegt: " << durchlaufe << std::endl;
+
+	return 0;
 }
 
