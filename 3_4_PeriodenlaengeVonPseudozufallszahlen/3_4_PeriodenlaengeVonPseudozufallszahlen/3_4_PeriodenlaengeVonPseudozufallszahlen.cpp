@@ -12,9 +12,23 @@ Description: "Aufgabe: Periodenlänge von Pseudozufallszahlen"
 
 
 #include "stdafx.h"
-#include <cmath>
 #include <iostream>
 #include <iomanip>
+
+using namespace std;
+
+int pow(int x, int y)
+{
+	if (y == 0)
+	{
+		return 1;
+	}
+	if (y == 1)
+	{
+		return x;
+	}
+	return x * pow(x, y - 1);
+}
 
 /*  description:    Hauptmethode des C++ Programms.
 parameters:			na
@@ -28,7 +42,7 @@ int main()
 
 	double x = 0;
 
-	std::cout << "10 Zufallszahlen:" << std::endl;
+	cout << "10 Zufallszahlen:" << endl;
 
 	double zufallswert = 0;
 	int durchlaufe = 0;
@@ -36,13 +50,12 @@ int main()
 	{
 		zufallswert = fmod((a * zufallswert + b), m);
 		durchlaufe++;
-		//std::cout << std::setw(6) << zufallswert << std::endl;
 	}
 
-	std::cout << "a = " << a << std::endl;
-	std::cout << "b = " << b << std::endl;
-	std::cout << "m = " << m << std::endl << std::endl;
-	std::cout << "Die Periodenlaenge betraegt: " << durchlaufe << std::endl;
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
+	cout << "m = " << m << endl << endl;
+	cout << "Die Periodenlaenge betraegt: " << durchlaufe-1 << endl;
 
 	return 0;
 }

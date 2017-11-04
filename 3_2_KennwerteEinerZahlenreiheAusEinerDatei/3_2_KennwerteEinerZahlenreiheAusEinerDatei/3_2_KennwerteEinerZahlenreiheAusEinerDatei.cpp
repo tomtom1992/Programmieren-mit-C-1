@@ -75,14 +75,16 @@ double mean(double a[100], int anzahl)
 }
 
 
-string datei_einlesen(string datei_name)
+string datei_einlesen(const string datei_name)
 {
-	ifstream eingabe(datei_name);
+	ifstream eingabe;
 	if (!eingabe)
 	{
 		cerr << "Fehler beim Oeffnen der Datei " << datei_name << "\n";
 		return "";
 	}
+
+	eingabe.open(datei_name);
 
 	string zeile;
 	string inhalt;
@@ -91,6 +93,8 @@ string datei_einlesen(string datei_name)
 	{
 		inhalt += zeile + "\n";
 	}
+
+	eingabe.close();
 	return inhalt;
 }
 
@@ -106,7 +110,6 @@ int main()
 
 	while (getline(myfile, line))
 		++number_of_lines;
-
 
 	// Array deklarieren und initialisieren
 	//double a[number_of_lines];
