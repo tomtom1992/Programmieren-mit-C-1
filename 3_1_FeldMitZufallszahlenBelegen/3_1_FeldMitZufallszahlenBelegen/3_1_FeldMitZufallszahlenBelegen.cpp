@@ -78,6 +78,8 @@ return value:		Wenn das Programm ohne Fehler durchläuft, wird 0 zurückgegeben.
 */
 int main()
 {
+	srand(time(NULL));
+
 	double a[100];
 	for (int i = 0; i < 100; ++i)
 	{
