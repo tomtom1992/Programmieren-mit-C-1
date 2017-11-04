@@ -80,14 +80,14 @@ string datei_einlesen(string datei_name)
 	ifstream eingabe(datei_name);
 	if (!eingabe)
 	{
-		std::cerr << "Fehler beim Oeffnen der Datei " << datei_name << "\n";
+		cerr << "Fehler beim Oeffnen der Datei " << datei_name << "\n";
 		return "";
 	}
 
-	std::string zeile;
-	std::string inhalt;
+	string zeile;
+	string inhalt;
 
-	while (std::getline(eingabe, zeile))
+	while (getline(eingabe, zeile))
 	{
 		inhalt += zeile + "\n";
 	}
@@ -100,8 +100,18 @@ return value:		Wenn das Programm ohne Fehler durchläuft, wird 0 zurückgegeben.
 */
 int main()
 {
-	double a[100];
-	for (int i = 0; i < 100; ++i)
+	int number_of_lines = 0;
+	string line;
+	ifstream myfile("C:\\Projects\\Programmieren-mit-C-1\\3_2_KennwerteEinerZahlenreiheAusEinerDatei\\Debug\\daten-3-2.txt");
+
+	while (getline(myfile, line))
+		++number_of_lines;
+
+
+	// Array deklarieren und initialisieren
+	//double a[number_of_lines];
+	double* a = new double[number_of_lines];
+	for (int i = 0; i < number_of_lines; ++i)
 	{
 		a[i] = 0;
 	}
@@ -109,21 +119,22 @@ int main()
 	string inhalt = datei_einlesen("C:\\Projects\\Programmieren-mit-C-1\\3_2_KennwerteEinerZahlenreiheAusEinerDatei\\Debug\\daten-3-2.txt");
 
 	int i = 0;
-	while (inhalt != "" && i<100)
+	while (inhalt != "" && i<number_of_lines)
 	{
-		int index = inhalt.find('\n');
+		// vom Anfang den Index des nächsten Zeilenumbruchs finden
+		const int index = inhalt.find('\n');
 
-		string aktuelle_zeile = inhalt.substr(0, index);
+		// nur die aktuelle Zeile über substr erhalten
+		const string aktuelle_zeile = inhalt.substr(0, index);
 
-		//aktuelle_zeile.erase(0, aktuelle_zeile.find_first_not_of(" ")); //führende Leerzeichen entfernen
-		//aktuelle_zeile.erase(aktuelle_zeile.find_last_not_of(" ") + 1);  //Leerzeichen am Ende entfernen
-
+		// String zu double konvertieren
 		a[i++] = stod(aktuelle_zeile);
 
+		// den Inhalt String verkleinern
 		inhalt = inhalt.substr(index+1);
 	}
 
-	int anzahl_double_werte_in_datei = i;
+	const int anzahl_double_werte_in_datei = i;
 
 	cout << "Anzahl Werte:\t" << anzahl_double_werte_in_datei;
 	
