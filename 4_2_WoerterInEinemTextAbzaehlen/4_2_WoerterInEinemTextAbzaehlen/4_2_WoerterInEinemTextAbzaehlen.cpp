@@ -14,9 +14,6 @@ Description: "Aufgabe: Wörter in einem Text abzählen"
 #include "stdafx.h"
 #include <iostream>
 #include <iomanip>
-#include <cstdlib>
-#include <fstream>
-#include <string>
 
 using namespace std;
 
@@ -26,58 +23,41 @@ return value:		Gibt 0 zurück, wenn das Programm ohne Fehler gelaufen ist.
 */
 int main()
 {
-	int   summewoerter, summezahlen;                 // Schleifenzähler,Buchstabezähler
+	int   maxstring = 256;                      // Puffergröße
+	char  text[256];                      // Eingabepuffer
+	char  c;                                    // Hilfsvariable
+	int   i, summewoerter;                 // Schleifenzähler,Buchstabezähler
 	int	  zustand;
 
 	const int LEER = 0;
 	const int WORT = 1;
-	const int ZAHL = 2;
 
 	zustand = LEER;
 
+	cout << "***** Klein- und Großbuchstaben abzählen *****\n";
+	cout << "Geben Sie eine Textzeile ein: ";
 
-	const string ifs_file_name = "text.txt";
-	ifstream ifs;
-	ifs.open(ifs_file_name.c_str());
-
-	if (!ifs)
-	{
-		cerr << "\nERROR: failed to open input file " << ifs_file_name << endl;
-		exit(1);
+	i = 0;
+	while ((c = cin.get()) != '\n') {       // Einzelzeichen lesen
+		text[i] = c;                              //  und im Feld ablegen
+		i = i + 1;                            // Schleifenzähler erhöhen
 	}
+	text[i] = '\0';                             // Zeichenkette abschließen
 
-	summewoerter = summezahlen = 0;
+	cout << "Der eingegebene Text lautet '" << text << "'\n";
 
-	//Eingabedatei lesen
-
-	char wert;
-	//i = 0;
-	while (ifs >> wert) {       // Einzelzeichen lesen
-
-		if (isalpha(wert))
+	summewoerter = 0;
+	for (i = 0; text[i] != '\0'; i += 1) {
+		/*if (islower(text[i])) summekl = summekl + 1;
+		if (isupper(text[i])) summegr = summegr + 1;*/
+		/*if (isalpha(text[i])) summeal = summeal + 1;
+		if (isdigit(text[i])) summezif = summezif + 1;*/
+		if (isalpha(text[i]))
 		{
 			if (zustand == LEER)
 			{
 				zustand = WORT;
 				summewoerter++;
-			}
-			if (zustand == ZAHL)
-			{
-				// In einer Zahl tritt ein Wort auf -> Fehler
-				exit(1);
-			}
-		}
-		else if (isdigit(wert))
-		{
-			if (zustand == LEER)
-			{
-				zustand = ZAHL;
-				summezahlen++;
-			}
-			if (zustand == WORT)
-			{
-				// In einem Wort tritt eine Ziffer auf -> Fehler
-				exit(1);
 			}
 		}
 		else
@@ -87,15 +67,11 @@ int main()
 				zustand = LEER;
 			}
 		}
-
-
 	}
-	// Zeichenkette abschließen
-
-	ifs.close();
-
+	/*cout << setw(6) << summekl << " Kleinbuchstaben\n";
+	cout << setw(6) << summegr << " Grossbuchstaben\n";*/
 	cout << setw(6) << summewoerter << " Woerter\n";
-	cout << setw(6) << summezahlen << " Zahlen\n";
+	//cout << setw(6) << summezif << " Ziffern\n";
 
 	return 0;
 }
