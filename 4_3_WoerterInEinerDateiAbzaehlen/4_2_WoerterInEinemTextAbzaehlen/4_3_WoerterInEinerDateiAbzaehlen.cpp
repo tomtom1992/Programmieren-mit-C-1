@@ -1,12 +1,12 @@
 /*=========================================================
 
-Filename: 4_2_WoerterInEinemTextAbzaehlen.cpp
+Filename: 4_3_WoerterInEinerDateiAbzaehlen.cpp
 
 Author: Thomas Hahn
 
 Date: 07.11.2017
 
-Description: "Aufgabe: Wörter in einem Text abzählen"
+Description: "Aufgabe: Wörter in einer Datei abzählen"
 
 ==========================================================*/
 
@@ -90,12 +90,11 @@ int main()
 
 
 	}
-	// Zeichenkette abschließen
 
 	ifs.close();
 
-	cout << setw(6) << summewoerter << " Woerter\n";
-	cout << setw(6) << summezahlen << " Zahlen\n";
+	cout << setw(6) << summewoerter << " Woerter\n" << endl;
+	cout << setw(6) << summezahlen << " Zahlen\n" << endl;
 
 	return 0;
 }

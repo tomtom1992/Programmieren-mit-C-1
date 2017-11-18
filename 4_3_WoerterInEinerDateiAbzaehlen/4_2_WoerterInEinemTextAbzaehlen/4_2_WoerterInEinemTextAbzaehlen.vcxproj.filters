@@ -29,7 +29,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="4_2_WoerterInEinemTextAbzaehlen.cpp">
+    <ClCompile Include="4_3_WoerterInEinerDateiAbzaehlen.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
