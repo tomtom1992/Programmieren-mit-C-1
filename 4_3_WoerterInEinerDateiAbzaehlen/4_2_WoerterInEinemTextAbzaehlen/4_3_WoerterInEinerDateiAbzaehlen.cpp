@@ -36,7 +36,7 @@ int main()
 	zustand = LEER;
 
 
-	const string ifs_file_name = "text.txt";
+	const string ifs_file_name = "C:\\Projects\\Programmieren-mit-C-1\\4_3_WoerterInEinerDateiAbzaehlen\\Debug\\text.txt";
 	ifstream ifs;
 	ifs.open(ifs_file_name.c_str());
 
@@ -64,6 +64,7 @@ int main()
 			if (zustand == ZAHL)
 			{
 				// In einer Zahl tritt ein Wort auf -> Fehler
+				cout << "Fehler: in einer Zahl tritt ein Wort auf." << endl;
 				exit(1);
 			}
 		}
@@ -77,24 +78,20 @@ int main()
 			if (zustand == WORT)
 			{
 				// In einem Wort tritt eine Ziffer auf -> Fehler
+				cout << "Fehler: in einem Wort tritt eine Zahl auf." << endl;
 				exit(1);
 			}
 		}
 		else
 		{
-			if (zustand == WORT)
-			{
-				zustand = LEER;
-			}
+			zustand = LEER;
 		}
-
-
 	}
 
 	ifs.close();
 
-	cout << setw(6) << summewoerter << " Woerter\n" << endl;
-	cout << setw(6) << summezahlen << " Zahlen\n" << endl;
+	cout << setw(6) << summewoerter << " Woerter" << endl;
+	cout << setw(6) << summezahlen << " Zahlen" << endl;
 
 	return 0;
 }

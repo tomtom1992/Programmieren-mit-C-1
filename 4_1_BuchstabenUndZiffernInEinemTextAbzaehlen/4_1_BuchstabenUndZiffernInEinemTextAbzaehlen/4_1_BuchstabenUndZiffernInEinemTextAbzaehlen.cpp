@@ -17,19 +17,6 @@ Description: "Aufgabe: Buchstaben und Ziffern in einem Text abzählen"
 
 using namespace std;
 
-int pow(int x, int y)
-{
-	if (y == 0)
-	{
-		return 1;
-	}
-	if (y == 1)
-	{
-		return x;
-	}
-	return x * pow(x, y - 1);
-}
-
 /*  description:    Hauptmethode des C++ Programms.
 parameters:			na
 return value:		Gibt 0 zurück, wenn das Programm ohne Fehler gelaufen ist.

@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{337C5E3B-450A-4B75-A6E3-FDF6B22D5F81}</ProjectGuid>
+    <ProjectGuid>{D422F457-DAD1-425F-8110-EA4D9105E9C8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My4_2_WoerterInEinemTextAbzaehlen</RootNamespace>
+    <RootNamespace>My5_CodierenUndDecodierenVonTexten</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>4_3_WoerterInEinerDateiAbzaehlen</ProjectName>
+    <ProjectName>5_1_ROT13</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -150,7 +150,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="4_3_WoerterInEinerDateiAbzaehlen.cpp" />
+    <ClCompile Include="5_1_ROT13.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
