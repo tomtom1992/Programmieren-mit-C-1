@@ -1,9 +1,15 @@
-/*
-* File:   main.cpp
-* Author: Thomas Hahn
-* Description: Lösung zur Aufgabe: 5.2. Caesar-Verschlüsselung
-* Created on 21. November 2017
-*/
+/*=========================================================
+
+Filename: main.cpp
+
+Author: Thomas Hahn
+
+Date: 27.11.2017
+
+Description: "Lösung zur Aufgabe: 5.2. Caesar-Verschlüsselung"
+
+==========================================================*/
+
 
 //Standard General Utilities Library
 #include "stdafx.h"
@@ -19,7 +25,8 @@ char feldLinksSchieben[] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G','X', 'Y', 'Z' };
 char feldRechtsSchieben[] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G','X', 'Y', 'Z' };
 
 /* Beschreibung: wendet einen Bereich in einem Array
-* Übergabeparameter: a: zu wendendes Feld; n: Länge des zu wendenden Bereichs
+* Übergabeparameter: a: zu wendendes Feld; 
+* n: Länge des zu wendenden Bereichs
 */
 void feld_wenden(char a[], unsigned int n)
 {
@@ -47,14 +54,17 @@ void feld_wenden(char a[], unsigned int n)
 */
 void feld_links_rotieren(char a[], unsigned int n, unsigned int shift)
 {
+
+	//verschiebung muss kleiner als feldlänge sein
+	shift = shift % n;
+
 	//Verlassen falls shift=0
 	if (shift == 0)
 	{
 		return;
 	}
 
-	//verschiebung muss kleiner als feldlänge sein
-	shift = shift % n;
+	
 
 	//dreimaliger aufruf analog zu Abbildung 5.2 Lerneinheit 2
 	feld_wenden(a, shift);
@@ -70,19 +80,27 @@ void feld_links_rotieren(char a[], unsigned int n, unsigned int shift)
 */
 void feld_rechts_rotieren(char a[], unsigned int n, unsigned int shift)
 {
+
+	//verschiebung muss kleiner als feldlänge sein
+	shift = shift % n;
+
 	//Verlassen falls shift=0
 	if (shift == 0)
 	{
 		return;
 	}
-	//verschiebung muss kleiner als feldlänge sein
-	shift = shift % n;
+	
 
 	feld_wenden(a, n - shift);
 	feld_wenden(a, n);
 	feld_wenden(a, shift);
 }
 
+
+/*  description:    Hauptmethode des C++ Programms.
+parameters:			na
+return value:		Gibt 0 zurück, wenn das Programm ohne Fehler gelaufen ist.
+*/
 int main()
 {
 	//!!Testszenario
