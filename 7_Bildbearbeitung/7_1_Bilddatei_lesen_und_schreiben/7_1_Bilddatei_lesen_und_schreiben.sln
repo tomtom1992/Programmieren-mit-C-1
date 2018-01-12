@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7_1_Bilddatei_lesen_und_schreiben", "7_1_Bilddatei_lesen_und_schreiben\7_1_Bilddatei_lesen_und_schreiben.vcxproj", "{744EF66B-F833-49CA-9592-46FB37983CDB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7_2_Grauwertbild_bearbeiten", "7_2_Grauwertbild_bearbeiten\7_2_Grauwertbild_bearbeiten.vcxproj", "{40CE0EE4-D7E2-4537-9572-6CDF3B16B5EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{744EF66B-F833-49CA-9592-46FB37983CDB}.Release|x64.Build.0 = Release|x64
 		{744EF66B-F833-49CA-9592-46FB37983CDB}.Release|x86.ActiveCfg = Release|Win32
 		{744EF66B-F833-49CA-9592-46FB37983CDB}.Release|x86.Build.0 = Release|Win32
+		{40CE0EE4-D7E2-4537-9572-6CDF3B16B5EA}.Debug|x64.ActiveCfg = Debug|x64
+		{40CE0EE4-D7E2-4537-9572-6CDF3B16B5EA}.Debug|x64.Build.0 = Debug|x64
+		{40CE0EE4-D7E2-4537-9572-6CDF3B16B5EA}.Debug|x86.ActiveCfg = Debug|Win32
+		{40CE0EE4-D7E2-4537-9572-6CDF3B16B5EA}.Debug|x86.Build.0 = Debug|Win32
+		{40CE0EE4-D7E2-4537-9572-6CDF3B16B5EA}.Release|x64.ActiveCfg = Release|x64
+		{40CE0EE4-D7E2-4537-9572-6CDF3B16B5EA}.Release|x64.Build.0 = Release|x64
+		{40CE0EE4-D7E2-4537-9572-6CDF3B16B5EA}.Release|x86.ActiveCfg = Release|Win32
+		{40CE0EE4-D7E2-4537-9572-6CDF3B16B5EA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
