@@ -1,0 +1,49 @@
+void fill(Pixel** bild, int nz, int ns, int inz, int ins, Pixel oldval, Pixel newval)
+{
+	
+	// Impfpixel setzen
+	bild[inz][ins] = newval;
+
+	int tempix = 0;
+
+	//tempix = bild[inz][ins];
+
+	// Links prüfen
+	if (ins > 0)
+	{
+		if (bild[inz][ins-1] == oldval)
+		{
+			fill(bild, nz, ns, inz , ins-1, Pixel(255), Pixel(127));
+		}
+	}
+
+	// Rechts prüfen
+	if (ins < ns-1)
+	{
+		if (bild[inz][ins + 1] == oldval)
+		{
+			fill(bild, nz, ns, inz, ins + 1, Pixel(255), Pixel(127));
+		}
+	}
+
+	// Oben prüfen
+	if (inz > 0)
+	{
+		if (bild[inz-1][ins] == oldval)
+		{
+			fill(bild, nz, ns, inz-1, ins , Pixel(255), Pixel(127));
+		}
+	}
+
+	// Unten prüfen
+	if (inz < nz-1)
+	{
+		if (bild[inz + 1][ins] == oldval)
+		{
+			fill(bild, nz, ns, inz + 1, ins, Pixel(255), Pixel(127));
+		}
+	}
+
+
+
+}
