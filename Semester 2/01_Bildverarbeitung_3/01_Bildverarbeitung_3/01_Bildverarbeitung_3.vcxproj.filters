@@ -29,8 +29,5 @@
     <ClCompile Include="01_Bildverarbeitung_3.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="pgm_bild.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
